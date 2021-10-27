@@ -9,6 +9,7 @@ function TripContainer() {
     const [trips, setTrips] = useState([]);
     const [showModal, SetShowModal] = useState(false);
     const [searchTerm, setSearch] = useState("");
+    const [driverOrRider, setDriverOrRider] = useState("");
 
     useEffect(() => {
         fetch("http://localhost:9292/trips")

@@ -1,16 +1,15 @@
 import React from "react";
-import './Trips.css'
+import background from './background.mp4'
+import logo1 from './Craigslist1.png'
+import "./Filter_Header.css"
 
 function Header() {
   return (
     <div id="header">
-      <h2>This is the header</h2>
-      <img
-        src="https://chicagoinnovation.com/wp-content/uploads/2021/02/Flatiron-logo.png"
-        alt="Flatiron Logo"
-      />
+        <video src={background} loop muted id="background-video" autoplay="true" />
+        <img id="logo" src={logo1}/>
     </div>
-  );
+    );
 }
 
 export default Header;
