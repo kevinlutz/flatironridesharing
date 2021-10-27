@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-function TripCard({rider_id ,driver_id, distance, amount, tip }) {
+function TripCard({date, rider_id ,driver_id, distance, amount, tip }) {
   const [driver, setDriver] = useState([]);
   const [rider, setRider] = useState([]);
 
@@ -20,6 +20,7 @@ function TripCard({rider_id ,driver_id, distance, amount, tip }) {
     <div className="trip-card">
       <p><b>Driver Name:</b> {driver.first_name} {driver.last_name}</p>
       <p><b>Rider Name:</b> {rider.first_name} {rider.last_name}</p>
+      <p><b>Date:</b> {date}</p>
       <p><b>Distance:</b> {distance} miles</p>
       <p><b>Amount:</b> ${amount}</p>
       <p><b>Tipped:</b> {tip ? "Yes" : "No"}</p>

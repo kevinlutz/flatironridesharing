@@ -5,14 +5,17 @@
 }
 
 .trip-card{
-    background-color: rgba(255, 255, 255, 0.85);
     float: left;
     width: 250px;
     border: 1px solid black;
     margin: 5px 5px;
     padding: 5px 5px 5px 10px;
-    max-width: 240px;
-    max-height: 240px;
+    width: 250px;
+    height: 250px;
+    background-image: url("test.png");
+    mix-blend-mode: luminosity;
+    opacity: 0.3;
+    background-size: 250px 250px;
 }
 
 .trip-card:hover{
@@ -20,11 +23,14 @@
     box-shadow: 4px 6px 15px -1px rgba(0,0,0,0.15);
     text-decoration: none;
     cursor: pointer;
+    opacity: 0.8;
+    mix-blend-mode: unset;
 }
 
 .trip-card:active{
     transform: translateY(-1px);
     box-shadow: 4px 6px 8px -1px rgba(0,0,0,0.65);
+    opacity: 0.8;
 }
 
 #trip-container{

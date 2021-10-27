@@ -1,6 +1,6 @@
 import  React, { useState }  from 'react';
 
-function Filter() {
+function Filter({setSearch}) {
     
     const [showDrivers, SetShowDrivers] = useState(false)
     const [showRiders, SetShowRiders] = useState(false)
@@ -17,7 +17,7 @@ function Filter() {
     return (
        <div style={{border: "1px solid black", margin: "5px", padding: "15px", width: "60%"}}>
            <form>
-                <input type="text" placeholder="Filter by name..."/>
+                <input onChange={(e)=>setSearch(e.target.value)} type="text" placeholder="Filter by name..."/>
                 <input onChange={setDriverList} name="drivers" checked={showDrivers} type="checkbox" disabled ={showRiders} label="Drivers"/>Drivers
                 <input onChange={setRiderList} name="drivers" checked={showRiders} type="checkbox" disabled = {showDrivers} label="Drivers"/>Riders
                 {showDrivers === false && showRiders === false ? null
