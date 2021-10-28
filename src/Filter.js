@@ -6,7 +6,6 @@ function Filter({ setSearch, setDriverOrRider, trips, chooseDriverOrRider }) {
   const [showRiders, SetShowRiders] = useState(false);
 
   function setDriverList() {
-    console.log(showDrivers);
     if (showDrivers === true) {
       SetShowDrivers(false);
       SetShowRiders(false);
@@ -16,7 +15,7 @@ function Filter({ setSearch, setDriverOrRider, trips, chooseDriverOrRider }) {
       setDriverOrRider("drivers");
     }
     chooseDriverOrRider();
-  }
+}
 
   function setRiderList() {
     if (showRiders === true) {
@@ -37,7 +36,7 @@ function Filter({ setSearch, setDriverOrRider, trips, chooseDriverOrRider }) {
           type="text"
           placeholder="Filter by name..."
         />
-        <input
+        {/* <input
           onChange={setDriverList}
           name="drivers"
           checked={showDrivers}
@@ -54,7 +53,7 @@ function Filter({ setSearch, setDriverOrRider, trips, chooseDriverOrRider }) {
           disabled={showDrivers}
           label="Drivers"
         />
-        Riders
+        Riders */}
         {showDrivers === false && showRiders === false ? null : showDrivers ? (
           <>
             <select>

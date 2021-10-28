@@ -13,7 +13,7 @@ function Header() {
         id="background-video"
         autoPlay={true}
       />
-      <img id="logo" src={logo1} />
+      <img id="logo" alt="logo" src={logo1} />
     </div>
   );
 }
