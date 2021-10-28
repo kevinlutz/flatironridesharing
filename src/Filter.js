@@ -9,10 +9,10 @@ function Filter({ setSearch, setDriverOrRider, trips, chooseDriverOrRider }) {
     if (showDrivers === true) {
       SetShowDrivers(false);
       SetShowRiders(false);
-      setDriverOrRider("trips");
+      // setDriverOrRider("trips");
     } else {
       SetShowDrivers(true);
-      setDriverOrRider("drivers");
+      // setDriverOrRider("drivers");
     }
     chooseDriverOrRider();
 }

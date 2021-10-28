@@ -1,12 +1,11 @@
 
 .trip-card{
     float: left;
-    width: 250px;
+    width: 300px;
     border: 1px solid black;
     margin: 10px;
     padding: 5px 5px 5px 10px;
-    width: 250px;
-    height: 250px;
+    height: 260px;
     background-image: url("test.png");
     mix-blend-mode: luminosity;
     opacity: 0.3;

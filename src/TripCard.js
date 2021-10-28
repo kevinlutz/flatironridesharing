@@ -1,8 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
+import EditAmount from "./EditAmount";
 import "./Trips.css";
 
-function TripCard({ driver, rider, date, distance, amount, tip }) {
+function TripCard({trip, deleteTrip, handleUpdateTrip }) {
+  const {id, driver, rider, date, distance, amount, tip } = trip;
+  const [isEditing, setIsEditing] = useState(false);
+
+  const handleDelete = () => {
+    deleteTrip(id);
+    fetch(`http://localhost:9292/trips/${id}`, {
+      method: "DELETE",
+    });
+  };
+
   return (
+    <>
     <div className="trip-card">
       <p>
         <b>Driver Name:</b> {driver.name}
@@ -17,12 +29,19 @@ function TripCard({ driver, rider, date, distance, amount, tip }) {
         <b>Distance:</b> {distance} miles
       </p>
       <p>
-        <b>Amount:</b> $ {amount}
+        <b>Amount:</b> $ {amount} {
+        isEditing ? (<EditAmount handleUpdateTrip={handleUpdateTrip} trip={trip}/>) : 
+        <button onClick={() => setIsEditing((isEditing) => !isEditing)} style={{marginLeft:"5px"}}>Edit</button>}
       </p>
       <p>
         <b>Tipped:</b> {tip ? "Yes" : "No"}
       </p>
+      <div>
+        
+        <button onClick={handleDelete} style={{float:"right"}}> 🗑️ </button>
     </div>
+    </div>
+    </>
   );
 }
 
