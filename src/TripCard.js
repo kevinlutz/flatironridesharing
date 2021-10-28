@@ -19,8 +19,8 @@ function TripCard({date, rider_id ,driver_id, distance, amount, tip }) {
 
   return (
     <div className="trip-card">
-      <p><b>Driver Name:</b> {driver.first_name} {driver.last_name}</p>
-      <p><b>Rider Name:</b> {rider.first_name} {rider.last_name} ({rider.age})</p>
+      <p><b>Driver Name:</b> {driver.name}</p>
+      <p><b>Rider Name:</b> {rider.name} ({rider.age})</p>
       <p><b>Date:</b> {date}</p>
       <p><b>Distance:</b> {distance} miles</p>
       <p><b>Amount:</b> ${amount}</p>

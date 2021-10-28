@@ -61,7 +61,7 @@ function Filter({setSearch, setDriverOrRider}) {
                     <option value="none">Select a driver...</option>
                     {drivers.map((driver) => (
                     <option key={driver.id} value={driver.id}>
-                        {driver.first_name} {driver.last_name}
+                        {driver.name}
                     </option>
                     ))}
                 </select>
@@ -78,7 +78,7 @@ function Filter({setSearch, setDriverOrRider}) {
                     <option value="none">Select a rider...</option>
                     {riders.map((rider) => (
                     <option key={rider.id} value={rider.id}>
-                        {rider.first_name} {rider.last_name}
+                        {rider.name}
                     </option>
                     ))}
                 </select>
