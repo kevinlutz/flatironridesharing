@@ -30,6 +30,7 @@ function Filter({ setSearch, setDriverOrRider, trips, chooseDriverOrRider }) {
   }
   return (
     <div id="filter-bar">
+      <h2>Your Trips</h2>
       <form>
         <input
           onChange={(e) => setSearch(e.target.value)}

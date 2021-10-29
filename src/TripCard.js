@@ -30,7 +30,7 @@ function TripCard({trip, deleteTrip, handleUpdateTrip }) {
       </p>
       <p>
         <b>Amount:</b> $ {amount} {
-        isEditing ? (<EditAmount handleUpdateTrip={handleUpdateTrip} trip={trip}/>) : 
+        isEditing ? (<EditAmount setIsEditing={setIsEditing} handleUpdateTrip={handleUpdateTrip} trip={trip}/>) : 
         <button onClick={() => setIsEditing((isEditing) => !isEditing)} style={{marginLeft:"5px"}}>Edit</button>}
       </p>
       <p>

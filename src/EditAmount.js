@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 
-function EditAmount({ trip, handleUpdateTrip }) {
+function EditAmount({ trip, handleUpdateTrip, setIsEditing }) {
     const {id, driver, rider, date, distance, amount, tip } = trip;
     const [updatedAmount, setUpdatedAmount] = useState(amount);
 
     function handleEditForm(e) {
       e.preventDefault();
-  
+      
       fetch(`http://localhost:9292/trips/${id}`, {
         method: "PATCH",
         headers: {
@@ -16,6 +16,8 @@ function EditAmount({ trip, handleUpdateTrip }) {
       })
         .then((resp) => resp.json())
         .then((updatedAmount) => handleUpdateTrip(updatedAmount));
+
+        setIsEditing(false)
     }
   
     return (

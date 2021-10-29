@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./AddTrip.css";
 
-function AddTrip({ trips, addNewTrip }) {
+function AddTrip({ trips, addNewTrip, setAddForm }) {
   function uniq(arr) {
     const newArr = [];
     arr.forEach((e) => {
@@ -78,9 +78,12 @@ function AddTrip({ trips, addNewTrip }) {
   return (
     <div id="new-trip-form">
       <h2>New Trip</h2>
+      <button id="exit-button" onClick={()=>setAddForm(false)}>x</button>
       <form onSubmit={handleSubmit}>
+        <br/>
         Driver Name:{" "}
         <select
+          className="form-item"
           required="required"
           placeholder="Select a driver..."
           onChange={(e) => handleDriverName(e)}
@@ -93,8 +96,11 @@ function AddTrip({ trips, addNewTrip }) {
             </option>
           ))}
         </select>
+        <br/>
+        <br/>
         Rider Name:{" "}
         <select
+          className="form-item"
           required="required"
           placeholder="Select a rider..."
           onChange={(e) => handleRiderName(e)}
@@ -107,8 +113,11 @@ function AddTrip({ trips, addNewTrip }) {
             </option>
           ))}
         </select>
+        <br/>
+        <br/>
         Date:{" "}
         <input
+          className="form-item"
           required="required"
           type="string"
           name="date"
@@ -120,6 +129,7 @@ function AddTrip({ trips, addNewTrip }) {
         />
         Price: $
         <input
+          className="form-item"
           required="required"
           type="number"
           name="price"
@@ -129,8 +139,11 @@ function AddTrip({ trips, addNewTrip }) {
           onChange={(e) => setAmount(e.target.value)}
           style={{ width: "50px", margin: "0px 5px 0px 0px" }}
         />
+        <br/>
+        <br/>
         Distance:{" "}
         <input
+          className="form-item"
           required="required"
           type="number"
           name="distance"
@@ -142,6 +155,7 @@ function AddTrip({ trips, addNewTrip }) {
         />
         Tipped:{" "}
         <select
+          className="form-item"
           required="required"
           placeholder="Tipped?"
           onChange={(e) => setTip(e.target.value)}
@@ -154,7 +168,9 @@ function AddTrip({ trips, addNewTrip }) {
           <option value="true">Yes!</option>
           <option value="false">No :(</option>
         </select>
-        <button type="submit">Add Trip</button>
+        <br/>
+        <br/>
+        <button id = "form-button" type="submit">Add Trip</button>
       </form>
     </div>
   );

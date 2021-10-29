@@ -33,6 +33,29 @@
     margin-right: auto;
 }
 
+#add-new-trip{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+    font-family: verdana;
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    height: 50px;
+    width: 100px;
+}
+
+#add-new-trip:hover{
+    background-color: black;
+    transform: translateY(-0.75px);
+    box-shadow: 4px 6px 15px -1px rgba(0,0,0,0.15);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 1;
+    mix-blend-mode: unset;
+}
+
 body {
     background-color: whitesmoke;
 }

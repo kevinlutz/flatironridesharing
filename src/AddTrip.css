@@ -1,8 +1,45 @@
 #new-trip-form {
   border: 1px solid black;
   margin: 5px;
-  padding: 15px;
-  width: 60%;
-  position: sticky;
-  top: 0;
+  padding: 0px 15px 20px 15px;
+  width: 295px;
+  bottom: 0;
+  z-index: 2;
+  margin-left: 10px;
+  background-color: white;
+  border-radius: 10px;
+  position: fixed;
+  right: 20px;
+}
+
+#exit-button {
+  position:fixed;
+  bottom: 250px;
+  right: 35px;
+  border-radius: 10px;
+}
+
+#exit-button:hover{
+  transform: translateY(-0.75px);
+  box-shadow: 4px 6px 15px -1px rgba(0,0,0,0.15);
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.8;
+  mix-blend-mode: unset;
+}
+
+.form-item{
+  margin:5px;
+}
+
+#form-button{
+  margin-left: 110px;
+}
+
+#form-button:hover{
+  transform: translateY(-0.55px);
+  box-shadow: 4px 6px 15px -1px rgba(0,0,0,0.08);
+  text-decoration: none;
+  cursor: pointer;
+  mix-blend-mode: unset;
 }
