@@ -13,11 +13,14 @@ function TripContainer() {
   useEffect(() => {
     fetch("http://localhost:9292/trips")
       .then((r) => r.json())
-      .then((all_trips)=> setTrips(all_trips));
+      .then((all_trips) => setTrips(all_trips));
   }, []);
 
   const addNewTrip = (newTripObj) => {
-    setTrips((all_trips) => [newTripObj, ...all_trips]);
+    //setTrips((trips) => [newTripObj, ...trips]);
+    console.log("boutta set state");
+    console.log([newTripObj, ...trips]);
+    setTrips([newTripObj, ...trips]);
   };
   // function chooseDriverOrRider() { // Ability to toggle between check boxes, the filter seems to be one step behind... maybe from the setter function
   //   if (driverOrRider === "drivers") { // Drivers
@@ -33,8 +36,8 @@ function TripContainer() {
   //       )
   //     );
   //   } else {
-  //     setFilteredDorR( 
-  //       trips.filter( //1.1) Ability to search by rider OR driver 
+  //     setFilteredDorR(
+  //       trips.filter( //1.1) Ability to search by rider OR driver
   //         (trip) =>
   //           trip.rider.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
   //           trip.driver.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -42,9 +45,11 @@ function TripContainer() {
   //     );
   //   }
   // }
-  const filteredList = trips.filter((trip) =>
+  const filteredList = trips.filter(
+    (trip) =>
       trip.rider.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      trip.driver.name.toLowerCase().includes(searchTerm.toLowerCase()))
+      trip.driver.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   function handleUpdateTrip(updatedTrip) {
     const updatedAmountConst = trips.map((trip) => {
@@ -61,7 +66,7 @@ function TripContainer() {
     const updatedTrips = trips.filter((trip) => trip.id !== id);
     setTrips(updatedTrips);
   };
-      
+
   return (
     <div id="trip-container">
       <h2>Your Trips</h2>
@@ -69,9 +74,17 @@ function TripContainer() {
         // setDriverOrRider={setDriverOrRider}
         // chooseDriverOrRider={chooseDriverOrRider}
         setSearch={setSearch}
-        trips={trips}/>
-      <AddTrip trips={trips} addNewTrip={addNewTrip}/>
-      {filteredList.map((trip) => (<TripCard deleteTrip={deleteTrip} handleUpdateTrip={handleUpdateTrip} key={trip.id} trip={trip} />))}
+        trips={trips}
+      />
+      <AddTrip trips={trips} addNewTrip={addNewTrip} />
+      {filteredList.map((trip) => (
+        <TripCard
+          deleteTrip={deleteTrip}
+          handleUpdateTrip={handleUpdateTrip}
+          key={trip.id}
+          trip={trip}
+        />
+      ))}
     </div>
   );
 }

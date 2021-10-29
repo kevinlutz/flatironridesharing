@@ -1,0 +1,8 @@
+#new-trip-form {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 15px;
+  width: 60%;
+  position: sticky;
+  top: 0;
+}
