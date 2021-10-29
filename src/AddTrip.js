@@ -151,8 +151,8 @@ function AddTrip({ trips, addNewTrip }) {
           <option value="none" default>
             Tipped?
           </option>
-          <option value="yes">Yes!</option>
-          <option value="no">No :(</option>
+          <option value="true">Yes!</option>
+          <option value="false">No :(</option>
         </select>
         <button type="submit">Add Trip</button>
       </form>
