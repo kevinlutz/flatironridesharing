@@ -12,6 +12,13 @@
     background-size: 250px 250px;
 }
 
+.trip-text{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1px 3px;
+    border-radius: 15px;
+    box-shadow: 4px 6px 15px -1px rgba(0,0,0,0.15);
+}
+
 .trip-card:hover{
     transform: translateY(-0.75px);
     box-shadow: 4px 6px 15px -1px rgba(0,0,0,0.15);

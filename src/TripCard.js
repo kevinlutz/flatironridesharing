@@ -16,6 +16,7 @@ function TripCard({trip, deleteTrip, handleUpdateTrip }) {
   return (
     <>
     <div className="trip-card">
+      <div className="trip-text">
       <p>
         <b>Driver Name:</b> {driver.name}
       </p>
@@ -39,6 +40,7 @@ function TripCard({trip, deleteTrip, handleUpdateTrip }) {
       <div>
         
         <button onClick={handleDelete} style={{float:"right"}}> 🗑️ </button>
+    </div>
     </div>
     </div>
     </>
